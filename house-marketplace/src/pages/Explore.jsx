@@ -1,9 +1,37 @@
 import React from 'react'
+import rentCategoryImage from '../assets/jpg/rentCategoryImage.jpg'
+import sellCategoryImage from '../assets/jpg/sellCategoryImage.jpg'
+import {Link} from 'react-router-dom'
 
 function Explore() {
   return (
-    <div>
-      <h1>Explore</h1>
+    <div className='explore'>
+      <header>
+        <p className="pageHeader">Explore</p>
+      </header>
+      <main>
+        <p className="exploreCategoryHeading">
+          Categories
+        </p>
+        <div className="exploreCategories">
+          <Link to='/category/rent'>
+          <img 
+          className='exploreCategoryImg'
+          src={rentCategoryImage} alt="rent"/>
+          <p className="exploreCategoryName">
+            Places for rent
+          </p>
+          </Link>
+          <Link to='/category/sale'>
+          <img 
+          className='exploreCategoryImg'
+          src={sellCategoryImage} alt="sell"/>
+          <p className="exploreCategoryName">
+            Places for sell
+          </p>
+          </Link>
+        </div>
+      </main>
     </div>
   )
 }
