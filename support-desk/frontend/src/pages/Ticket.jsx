@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import {closeTicket, getTicket,reset} from '../features/tickets/ticketSlice'
+import {closeTicket, getTicket} from '../features/tickets/ticketSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
@@ -7,9 +7,8 @@ import Spinner from '../components/Spinner'
 import BackButton from '../components/BackButton'
 
 function Ticket() {
-  const {ticket, isLoading,  isSuccess, isError, message} = useSelector((state) => state.tickets)
+  const {ticket, isLoading, isError, message} = useSelector((state) => state.tickets)
 
-  const params = useParams()
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const {ticketId} = useParams()
